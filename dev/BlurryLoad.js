@@ -1,11 +1,11 @@
 var images = document.getElementsByClassName("blur-image");
 //Make an array of each image that has the blur-image class
 
-var dataLargeArray = [];
+var imageDataLarge = [];
 for (var i = 0; i < images.length; i++) {
-  dataLargeArray.push(images[i].getAttribute("data-large"));
+  imageDataLarge.push(images[i].getAttribute("data-large"));
 }
-//Make an array of the data-large attribute for each image with the image-blur class
+//Make an array of the data-large attribute for each image with the blur-image class
 //This will be a separate array
 //because the CSS Filter Fallback below requires the data-large attribute
 //be removed from each image
@@ -56,7 +56,7 @@ function fetchImage (url, image){
 
 window.onload = function(){
   for (var i = 0; i < images.length; i++) {
-    fetchImage(dataLargeArray[i], images[i]);
+    fetchImage(imageDataLarge[i], images[i]);
   }
 };
 //Run the fetchImage function for each image once the page has loaded
