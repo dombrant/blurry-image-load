@@ -1,6 +1,6 @@
 # Blurry Load Version 1.1
 ## Synopsis
-A simple library that loads images asychronously after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style.
+A simple library that loads images asynchronously after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style.
 
 ## Dependencies
 This libary's only dependency is a custom Modernizr script, found in `dist/lib`. This is used to apply fallbacks for CSS Filters and Fetch.
@@ -18,7 +18,7 @@ Download the `BlurryLoad.min.css` and `BlurryLoad.min.js` files (found in `dist`
 ```
 
 ## Usage
-For each image that you want to apply the Blurry Load effect, add the class `image-blur` class to the `<img>` tag in your HTML. Then, the `<img>` tag must have two attributes: an `src` that is the path to the image resized to be significantly smaller, and a `data-large` attribute that is the URL of the full-sized image.
+For each image that you want to apply the Blurry Load effect, add the class `image-blur` class to the `<img>` tag in your HTML. Then, the `<img>` tag must have two attributes: an `src` that is the path to the image resized to be smaller, and a `data-large` attribute that is the URL of the full-sized image.
 
 ```
 <img class="image-blur" src="img/Image1small.jpg" data-large="img/Image1Full.jpg">
@@ -28,12 +28,12 @@ For each image that you want to apply the Blurry Load effect, add the class `ima
 
 For resizing the images, I use Preview in macOS and change the width to 40 with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US).
 
-Finally, if you would like to apply a fallback for browsers that don't support CSS Filters, download `Gray.png` from `dist` and include it in your project's `img` folder.
+If you would like to apply a fallback for browsers that don't support CSS Filters, download `Gray.png` from `dist` and include it in your project's `img` folder.
 
 If the user's browser doesn't support CSS Filters, instead of applying the smaller image and blurring it, a blank, gray image is applied until the full-sized image loads.
 
 ## Browser Support
-Tested to work in Safari 10.1+ and Chrome 58+. The only two parts of this library that have browser support to consider are [CSS Filters](http://caniuse.com/#feat=css-filters) and [Fetch](http://caniuse.com/#feat=fetch). Both of these have fallbacks for older browsers. For browswers that don't support CSS Filters, a blank gray image is used instead of blurring the image before it is loaded. For browsers that don't support the JavaScript Fetch API, a good old XMLHttpRequest is used to load the images instead.
+Tested to work in Safari 10.1+ and Chrome 58+. The only two parts of this library that have browser support to consider are [CSS Filters](http://caniuse.com/#feat=css-filters) and [Fetch](http://caniuse.com/#feat=fetch). Both of these have fallbacks for older browsers. For browsers that don't support CSS Filters, a blank gray image is used instead of blurring the image before it is loaded. For browsers that don't support the JavaScript Fetch API, a good old XMLHttpRequest is used to load the images instead.
 
 ## Contributors
 **Dominic Brant**.
