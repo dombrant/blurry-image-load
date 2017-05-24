@@ -42,8 +42,7 @@ function fetchImage (url, image){
   //Fallback for browsers that don't support fetch
   //Uses an XMLHttpRequest
   else {
-    fetch(url, {
-      mode: 'cors'})
+    fetch(url, {mode: "no-cors"})
     .then(function () {
       image.src = url;
       image.classList.add("blur-out");
