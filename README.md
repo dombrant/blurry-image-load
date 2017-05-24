@@ -1,4 +1,4 @@
-# Blurry Load Version 1.1
+# Blurry Load Version 1.1.1
 ## Synopsis
 A simple library that loads images asynchronously after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style.
 
