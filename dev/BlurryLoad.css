@@ -1,35 +1,44 @@
 .blur-image{
-  -webkit-filter: blur(8px);
-          filter: blur(8px);
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
 }
 
 @keyframes blurOut {
   0%{
-    -webkit-filter: blur(8px);
-            filter: blur(8px);
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
   }
   50%{
-    -webkit-filter: blur(5px);
-            filter: blur(5px);
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
   }
   100%{
     -webkit-filter: blur(0px);
             filter: blur(0px);
   }
 }
+/*
+ Create the blurOut animation
+ To be used for all images with the blur-image class
+ */
 
 .blur-out{
   animation: blurOut 0.5s ease-out;
 }
 
 @keyframes shimmer{
-  0%{
-      background-position: -400px 0;
+    0%{
+        background-position: -400px 0;
     }
-  100%{
-      background-position: 400px 0;
+    100%{
+        background-position: 400px 0;
     }
 }
+/*
+ Create the shimmer class
+ This will create left to right shimmer effect
+ for the no-blur class below
+ */
 
 .no-blur {
     animation-duration: 2s;
@@ -40,3 +49,7 @@
     background: #f6f7f8;
     background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
 }
+/*
+ The no-blur class will be applied when the browser does not support CSS filters
+ Instead of showing a blurred image, a gray div with the shimmer animation is shown
+ */
