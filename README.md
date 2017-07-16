@@ -28,9 +28,7 @@ For each image that you want to apply the Blurry Load effect, add the class `ima
 
 For resizing the images, I use Preview in macOS and change the width to 40 with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US).
 
-If you would like to apply a fallback for browsers that don't support CSS Filters, download `Gray.png` from `dist` and include it in your project's `img` folder.
-
-If the user's browser doesn't support CSS Filters, instead of applying the smaller image and blurring it, a blank, gray image is applied until the full-sized image loads.
+If the user's browser doesn't support CSS Filters, instead of applying the smaller image and blurring it, a blank, gray shimmer is shown until the full-sized image loads.
 
 ## Browser Support
 Tested to work in Safari 10.1+ and Chrome 58+. The only two parts of this library that have browser support to consider are [CSS Filters](http://caniuse.com/#feat=css-filters) and [Fetch](http://caniuse.com/#feat=fetch). Both of these have fallbacks for older browsers. For browsers that don't support CSS Filters, a blank gray image is used instead of blurring the image before it is loaded. For browsers that don't support the JavaScript Fetch API, a good old XMLHttpRequest is used to load the images instead.
