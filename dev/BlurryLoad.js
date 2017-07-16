@@ -1,11 +1,11 @@
-var images = document.getElementsByClassName("blur-image");
-//Make an array of each image that has the blur-image class
+var images = document.getElementsByClassName("image-blur");
+//Make an array of each image that has the image-blur class
 
 var imageDataLarge = [];
 for (var i = 0; i < images.length; i++) {
   imageDataLarge.push(images[i].getAttribute("data-large"));
 }
-//Make an array of the data-large attribute for each image with the blur-image class
+//Make an array of the data-large attribute for each image with the image-blur class
 //This will be a separate array
 //because the CSS Filter Fallback below requires the data-large attribute
 //be removed from each image
@@ -15,7 +15,7 @@ if (!Modernizr.cssfilters) {
     images[i].src="";
     images[i].setAttribute("data-large", null);
     images[i].classList.add("no-blur");
-    images[i].classList.remove("blur-image");
+    images[i].classList.remove("image-blur");
   }
 }
 //Fallback for browsers that don't support support CSS filters (mainly IE)
@@ -34,7 +34,7 @@ function fetchImage (url, image){
       if (this.status === 200){
         image.src = url;
         image.classList.add("blur-out");
-        image.classList.remove("blur-image");
+        image.classList.remove("image-blur");
       }
     };
     xhr.send();
@@ -46,7 +46,7 @@ function fetchImage (url, image){
     .then(function () {
       image.src = url;
       image.classList.add("blur-out");
-      image.classList.remove("blur-image");
+      image.classList.remove("image-blur");
     });
   }
 }
