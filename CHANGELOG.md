@@ -1,6 +1,9 @@
 #Change Log
 All notable changes made to Blurry Load
 
+##1.1.2 (7-27-17)
+Added webkit prefix to CSS animations
+
 ##1.1.1 (5-23-17)
 Changed the request type mode when calling the Fetch API from `cors` to `no-cors` to fix an issue where Chrome would not load some images using Fetch.
 
