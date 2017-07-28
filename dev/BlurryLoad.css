@@ -17,6 +17,21 @@
             filter: blur(0px);
   }
 }
+
+@-webkit-keyframes blurOut {
+  0%{
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+  50%{
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+  100%{
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
 /*
  Create the blurOut animation
  To be used for all images with the blur-image class
@@ -27,6 +42,15 @@
 }
 
 @keyframes shimmer{
+    0%{
+        background-position: -400px 0;
+    }
+    100%{
+        background-position: 400px 0;
+    }
+}
+
+@-webkit-keyframes shimmer{
     0%{
         background-position: -400px 0;
     }
