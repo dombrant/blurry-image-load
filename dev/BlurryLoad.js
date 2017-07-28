@@ -25,10 +25,13 @@ if (!Modernizr.cssfilters) {
 //the data-large attribute has to be set to null
 
 function fetchImage (url, image){
+  //The function takes two arguments: the url of the image to load,
+  //and the img element to apply the loaded image to
+
   if (!Modernizr.fetch) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
-    //The request takes three parameters: the type of request, the url to load
+    //The request takes three arguments: the type of request, the url to load
     //and a boolean to determine if the request is asynchronous
     xhr.onload = function () {
       if (this.status === 200){
