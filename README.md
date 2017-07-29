@@ -1,6 +1,8 @@
 # Blurry Load Version 1.1.2
 ## Synopsis
-A simple library that loads images asynchronously after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style.
+A simple library that loads remote images asynchronously after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style.
+
+**WARNING:** this library is only meant to load remote images, as Chrome and Firefox block local image requests through XMLHttpRequest or Fetch.
 
 ## Dependencies
 This libary's only dependency is a custom Modernizr script, found in `dist/lib`. This is used to apply fallbacks for CSS Filters and Fetch.
@@ -9,7 +11,7 @@ Built with vanilla Javascript, no need for JQuery.
 
 ## Installation
 
-Download the `BlurryLoad.min.css` and `BlurryLoad.min.js` files (found in `dist`) and the `Modernizr-custom.js` file (found in `dist/lib`). Include them in your HTML (be sure to include `Modernizr-custom.js` **before** `BlurryLoad.min.js`).
+Download the `BlurryLoad.min.css` and `BlurryLoad.min.js` files (found in the `dist` folder) and the `Modernizr-custom.js` file (found in `dist/lib`). Include them in your HTML (be sure to include `Modernizr-custom.js` **before** `BlurryLoad.min.js`).
 
 ```
 <link rel="stylesheet" href="BlurryLoad.min.css">
@@ -21,9 +23,9 @@ Download the `BlurryLoad.min.css` and `BlurryLoad.min.js` files (found in `dist`
 For each image that you want to apply the Blurry Load effect, add the class `image-blur` class to the `<img>` tag in your HTML. Then, the `<img>` tag must have two attributes: an `src` that is the path to the image resized to be smaller, and a `data-large` attribute that is the URL of the full-sized image.
 
 ```
-<img class="image-blur" src="img/Image1small.jpg" data-large="img/Image1Full.jpg">
-<img class="image-blur" src="img/Image2small.jpg" data-large="img/Image2Full.jpg">
-<img class="image-blur" src="img/Image3small.jpg" data-large="img/Image3Full.jpg">
+<img class="image-blur" src="img/Image1small.jpg" data-large="https://path/to/Image1.jpg">
+<img class="image-blur" src="img/Image2small.jpg" data-large="https://path/to/Image2.jpg">
+<img class="image-blur" src="img/Image3small.jpg" data-large="https://path/to/Image3.jpg">
 ```
 
 For resizing the images, I use Preview in macOS and change the width to 40 with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US).
