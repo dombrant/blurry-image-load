@@ -1,5 +1,5 @@
-.blur-image {
-  filter: blur(20px);
+.blurry-load {
+  filter: blur(8px);
 }
 
 @keyframes blurOut {
