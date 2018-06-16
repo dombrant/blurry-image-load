@@ -7,7 +7,7 @@ const supportsCSSFilters = enableWebkit => {
     enableWebkit = false;
   }
   //creating an element dynamically
-  const element = document.createElement('text');
+  const element = document.createElement('test');
   //adding filter-blur property to it
   element.style.cssText =
     (enableWebkit ? '-webkit-' : '') + 'filter: blur(2px)';
@@ -23,7 +23,7 @@ const supportsCSSFilters = enableWebkit => {
 
 const images = [];
 
-for (let image of document.querySelectorAll('.image-blur')) {
+for (let image of document.querySelectorAll('.blurry-load')) {
   const currentImage = {
     element: image,
     dataLarge: image.getAttribute('data-large')
@@ -31,7 +31,7 @@ for (let image of document.querySelectorAll('.image-blur')) {
 
   images.push(currentImage);
 }
-/* Make an array of objects containing each element in the DOM with the image-blur class
+/* Make an array of objects containing each element in the DOM with the blurry-load class
 and its data-large attribute value */
 
 if (!supportsCSSFilters) {
@@ -39,7 +39,7 @@ if (!supportsCSSFilters) {
     image.src = '';
     image.setAttribute('data-large', null);
     image.classList.add('no-blur');
-    image.classList.remove('image-blur');
+    image.classList.remove('blurry-load');
   }
 }
 /* Fallback for browsers that don't support support CSS filters (mainly IE)
@@ -55,6 +55,8 @@ window.onload = () => {
 
     currentImage.onload = () => {
       image.element.src = currentImage.src;
+      image.element.classList.add('blur-out');
+      image.element.classList.remove('blurry-load');
     };
   }
 };
