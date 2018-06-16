@@ -51,7 +51,7 @@ the data-large attribute has to be set to null */
 window.onload = () => {
   for (let [index, image] of images.entries()) {
     const currentImage = new Image();
-    currentImage.src = image.dataLarge[index];
+    currentImage.src = image.dataLarge;
 
     currentImage.onload = () => {
       image.element.src = currentImage.src;
