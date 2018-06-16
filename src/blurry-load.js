@@ -49,7 +49,7 @@ To keep it from displaying the image before it's loaded,
 the data-large attribute has to be set to null */
 
 window.onload = () => {
-  for (let image of images.entries()) {
+  for (let image of images) {
     const currentImage = new Image();
     currentImage.src = image.dataLarge;
 
