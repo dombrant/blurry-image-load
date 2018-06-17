@@ -16,7 +16,9 @@ const supportsCSSFilters = enableWebkit => {
   //checking for false positives of IE
   //I prefer Modernizr's smart method of browser detection
   const test2 =
-    document.documentMode === undefined || document.documentMode > 9; //non-IE browsers, including ancient IEs //IE compatibility moe
+    document.documentMode === undefined || document.documentMode > 9;
+  //non-IE browsers, including ancient IEs
+  //IE compatibility mode
   //combining test results
   return test1 && test2;
 };
