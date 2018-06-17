@@ -34,19 +34,16 @@ for (let image of document.querySelectorAll('.blurry-load')) {
 /* Make an array of objects containing each element in the DOM with the blurry-load class
 and its data-large attribute value */
 
-if (!supportsCSSFilters) {
-  for (let image of images.element) {
-    image.src = '';
-    image.setAttribute('data-large', null);
-    image.classList.add('no-blur');
-    image.classList.remove('blurry-load');
+if (supportsCSSFilters) {
+  for (let image of images) {
+    image.element.src = '';
+    image.element.classList.add('no-blur');
+    image.element.classList.remove('blurry-load');
   }
 }
 /* Fallback for browsers that don't support support CSS filters (mainly IE)
 If the browser doesn't support CSS filters,
-Display a gray background with a shimmer gradient
-To keep it from displaying the image before it's loaded,
-the data-large attribute has to be set to null */
+Display a gray background with a shimmer gradient (see the CSS class no-blur for details) */
 
 window.onload = () => {
   for (let image of images) {
