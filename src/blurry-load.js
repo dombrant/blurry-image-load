@@ -36,7 +36,9 @@ for (let image of document.querySelectorAll('.blurry-load')) {
 /* Make an array of objects containing each element in the DOM with the blurry-load class
 and its data-large attribute value */
 
-if (!supportsCSSFilters) {
+if (!supportsCSSFilters(true) && !supportsCSSFilters(false)) {
+  /* If the browser does not support CSS filters
+  Checks with and without the -webkit- prefix */
   for (let image of images) {
     image.element.src = '';
     image.element.classList.add('no-blur');
