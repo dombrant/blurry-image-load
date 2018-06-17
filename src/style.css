@@ -1,25 +1,25 @@
-.container{
+.container {
   font-family: sans-serif;
 }
 
-h1{
+h1 {
   text-align: center;
   font-size: 48px;
 }
 
-p{
+p {
   text-align: center;
   font-size: 24px;
 }
 
-.images{
+.images {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-img{
+img {
   width: 400px;
   height: 400px;
   margin-top: 20px;
