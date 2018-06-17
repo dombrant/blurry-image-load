@@ -24,16 +24,19 @@
 
 @keyframes shimmer {
   0% {
-    background-position: -400px 0;
+    background-position: -100vw 0;
   }
 
   100% {
-    background-position: 400px 0;
+    background-position: 100vw 0;
   }
 }
 /* Create the shimmer animation
  This will create left to right shimmer effect
- for the no-blur class below  */
+ for the no-blur class below
+ Use -100vw to 100vw for the background position property
+ to ensure that this will work with different sized elements
+ (using -100% to 100% was resulting in a shimmer effect that didn't move left to right) */
 
 .no-blur {
   animation-duration: 2s;
