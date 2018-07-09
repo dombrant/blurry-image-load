@@ -4,11 +4,6 @@
 
 A simple library that loads remote images after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style.
 
-## Dependencies
-
-** UPDATE **
-This libary's only dependency is a custom Modernizr script, found in `dist/lib`. This is used to apply fallbacks for CSS Filters and Fetch.
-
 ## Installation
 
 ** UPDATE **
