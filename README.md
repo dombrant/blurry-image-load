@@ -58,9 +58,9 @@ window.onload = () => {
 
 ## Browser Support
 
-** UPDATE **
+Tested to work in Chrome 67+, Firefox 61+ and Safari 11.1+. The only part of this library that has browser support that you should consider is ES2015 syntax (let/const, arrow functions, etc.). If you want to support older browsers, you will have to transpile `blurry-load.min.js` yourself.
 
-Tested to work in Safari 10.1+ and Chrome 58+. The only two parts of this library that have browser support to consider are [CSS Filters](http://caniuse.com/#feat=css-filters) and [Fetch](http://caniuse.com/#feat=fetch). Both of these have fallbacks for older browsers. For browsers that don't support CSS Filters, a blank gray image is used instead of blurring the image before it is loaded. For browsers that don't support the JavaScript Fetch API, a good old XMLHttpRequest is used to load the images instead.
+Otherwise, this library uses [CSS filters](http://caniuse.com/#feat=css-filters), but this has a fallback in place. For browsers that don't support CSS filters, a blank gray `div` with a shimmer animation is shown before the full sized image is loaded (see the `no-blur` class in `blurry-load.css` for details).
 
 ## Contributors
 
