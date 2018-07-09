@@ -17,20 +17,15 @@ Download the `blurry-load.min.css` and `blurry-load.min.js` files (found in the 
 
 **NOTE:** If you do not want to see a flash of the tiny, blurry image in browsers that do not support CSS filters, link to the JavaScript file in the `head` tag of your HTML.
 
-** UPDATE **
 For each image that you want to apply the Blurry Load effect, add the class `blurry-load` class to the `<img>` tag in your HTML. Then, the `<img>` tag must have two attributes: an `src` that is the path to the image resized to be smaller, and a `data-large` attribute that is the URL of the full-sized image.
 
+```html
+<img class="blurry-load" src="img/image-1-small.jpg" data-large="img/image-1.jpg">
+<img class="blurry-load" src="img/image-2-small.jpg" data-large="img/image-2.jpg">
+<img class="blurry-load" src="img/image-3-small.jpg" data-large="img/image-3.jpg">
 ```
-<img class="blurry-load" src="img/Image1small.jpg" data-large="https://path/to/Image1.jpg">
-<img class="blurry-load" src="img/Image2small.jpg" data-large="https://path/to/Image2.jpg">
-<img class="blurry-load" src="img/Image3small.jpg" data-large="https://path/to/Image3.jpg">
-```
 
-For resizing the images, I use Preview in macOS and change the width to 40 with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US).
-
-If the user's browser doesn't support CSS Filters, instead of applying the smaller image and blurring it, a blank, gray shimmer is shown until the full-sized image loads.
-
-** UPDATE **
+**NOTE:** This library does not provide functionality for creating smaller versions of your images. That must be done on your own. For resizing images, I use Preview in macOS and change the width to 40 with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US). If you want to integrate resizing your images into your build workflow, you can use an image manipulation library like [sharp](https://github.com/lovell/sharp) or a gulp plugin like [gulp-image-resize](https://github.com/scalableminds/gulp-image-resize).
 
 ## "What about CSS background images?"
 
