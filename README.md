@@ -4,6 +4,8 @@
 
 A simple library that loads remote images after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style.
 
+If the user's browser doesn't support CSS Filters, instead of applying the smaller image and blurring it, a blank, gray shimmer is shown until the full-sized image loads.
+
 ## Installation
 
 Download the `blurry-load.min.css` and `blurry-load.min.js` files (found in the `dist` folder) and include in your HTML:
