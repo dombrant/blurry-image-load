@@ -4,7 +4,7 @@
 
 A simple library that loads remote images after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style.
 
-If the user's browser doesn't support CSS Filters, instead of applying the smaller image and blurring it, a blank, gray shimmer is shown until the full-sized image loads.
+If the user's browser doesn't support CSS filters, instead of applying the smaller image and blurring it, a blank, gray shimmer is shown until the full-sized image loads.
 
 ## Installation
 
@@ -31,33 +31,34 @@ For each image that you want to apply the Blurry Load effect, add the class `blu
 
 ## "What about CSS background images?"
 
-Unfortunately, background images are not yet ready to take advantage of this library's functionality. In calling this library, images are applied a CSS filter to blur them. There is no way to apply the same kind of filter to a background image in CSS, however the [back-drop filter draft](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty) shows hope that this could change in the future. It's [browser support](http://caniuse.com/#feat=css-backdrop-filter) is almost nonexistent though.
+Unfortunately, background images are not yet ready to take advantage of this library's functionality. In calling this library, images are applied a CSS filter to blur them. There is no way to apply the same kind of filter to a background image in CSS, however the [back-drop filter draft](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty) shows hope that this could change in the future. At the time of writing this, it's [browser support](http://caniuse.com/#feat=css-backdrop-filter) is very small.
 
-At the moment, my best recommendation is to make the background of your div the image's dominant color, then in your script, change the background to your image once the page has loaded. Below is a brief example of how to do this.
+At the moment, my best recommendation is to make the background of your div the image's dominant color, then in your JavaScript, change the background to your image once the page has loaded. Below is a brief example of how to do this.
 
 In your CSS:
 
-```
-.myDiv {
-background: #319ECB;
+```css
+.my-div {
+  background: #319ecb;
+  /* The dominant color of the image below */
 }
 
-.myDivWithImage {
-background: url("img/background.jpg");
+.my-div-background-image {
+  background: url('img/background.jpg');
 }
 ```
 
 In your JavaScript:
 
+```js
+window.onload = () => {
+  document.querySelector('.my-div').classList.add('my-div-background-image');
+};
 ```
-window.onload = function () {
-myDiv.classList.add("myDivWithImage");
-}
-```
-
-** UPDATE **
 
 ## Browser Support
+
+** UPDATE **
 
 Tested to work in Safari 10.1+ and Chrome 58+. The only two parts of this library that have browser support to consider are [CSS Filters](http://caniuse.com/#feat=css-filters) and [Fetch](http://caniuse.com/#feat=fetch). Both of these have fallbacks for older browsers. For browsers that don't support CSS Filters, a blank gray image is used instead of blurring the image before it is loaded. For browsers that don't support the JavaScript Fetch API, a good old XMLHttpRequest is used to load the images instead.
 
