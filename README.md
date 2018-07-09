@@ -6,16 +6,16 @@ A simple library that loads remote images after the page has loaded. Until the i
 
 ## Installation
 
-** UPDATE **
-Download the `BlurryLoad.min.css` and `BlurryLoad.min.js` files (found in the `dist` folder) and the `Modernizr-custom.js` file (found in `dist/lib`). Include them in your HTML (be sure to include `Modernizr-custom.js` **before** `BlurryLoad.min.js`).
+Download the `blurry-load.min.css` and `blurry-load.min.js` files (found in the `dist` folder) and include in your HTML:
 
-```
-<link rel="stylesheet" href="BlurryLoad.min.css">
-<script src="modernizr-custom.js"></script>
-<script src="BlurryLoad.min.js"></script>
+```html
+<link rel="stylesheet" href="blurry-load.min.css">
+<script src="blurry-load.min.js"></script>
 ```
 
 ## Usage
+
+**NOTE:** If you do not want to see a flash of the tiny, blurry image in browsers that do not support CSS filters, link to the JavaScript file in the `head` tag of your HTML.
 
 ** UPDATE **
 For each image that you want to apply the Blurry Load effect, add the class `blurry-load` class to the `<img>` tag in your HTML. Then, the `<img>` tag must have two attributes: an `src` that is the path to the image resized to be smaller, and a `data-large` attribute that is the URL of the full-sized image.
