@@ -2,9 +2,13 @@
 
 ## Synopsis
 
-A simple library that loads remote images after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style.
+A simple library that loads remote images after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style. Below is an example:
 
-If the user's browser doesn't support CSS filters, instead of applying the smaller image and blurring it, a blank, gray shimmer is shown until the full-sized image loads.
+![blur effect example](img/blur-effect.gif)
+
+If the user's browser doesn't support CSS filters, instead of applying the smaller image and blurring it, a blank, gray shimmer is shown until the full-sized image loads. Below is an example:
+
+![shimmer effect example](img/shimmer-effect.gif)
 
 ## Installation
 
