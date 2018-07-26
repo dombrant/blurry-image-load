@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-A simple library that loads remote images after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style. Below is an example:
+A simple library that loads images after the page has loaded. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style. Below is an example:
 
 ![blur effect example](img/blur-effect.gif)
 
@@ -31,13 +31,13 @@ For each image that you want to apply the Blurry Load effect, add the class `blu
 <img class="blurry-load" src="img/image-3-small.jpg" data-large="img/image-3.jpg">
 ```
 
-**NOTE:** This library does not provide functionality for creating smaller versions of your images. That must be done on your own. For resizing images, I use Preview in macOS and change the width to 40 with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US). If you want to integrate resizing your images into your build workflow, you can use an image manipulation library like [sharp](https://github.com/lovell/sharp) or a gulp plugin like [gulp-image-resize](https://github.com/scalableminds/gulp-image-resize).
+**NOTE:** This library does not provide functionality for creating smaller versions of your images. That must be done on your own. For resizing images, I use Preview in macOS and change the width to 40 with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US). If you want to integrate resizing your images into your build workflow, you can use an image manipulation library like [sharp](https://github.com/lovell/sharp) or a Gulp plugin like [gulp-image-resize](https://github.com/scalableminds/gulp-image-resize).
 
 ## "What about CSS background images?"
 
-Unfortunately, background images are not yet ready to take advantage of this library's functionality. In calling this library, images are applied a CSS filter to blur them. There is no way to apply the same kind of filter to a background image in CSS, however the [back-drop filter draft](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty) shows hope that this could change in the future. At the time of writing this, it's [browser support](http://caniuse.com/#feat=css-backdrop-filter) is very small.
+Unfortunately, background images are not yet ready to take advantage of this library's functionality. In calling this library, images are applied a CSS filter to blur them. There is no way to apply the same kind of filter to a background image in CSS, however the [back-drop filter draft](https://drafts.fxtf.org/filter-effects-2/#BackdropFilterProperty) shows hope that this could change in the future. At the time of writing this, its [browser support](http://caniuse.com/#feat=css-backdrop-filter) is very small.
 
-At the moment, my best recommendation is to make the background of your div the image's dominant color, then in your JavaScript, change the background to your image once the page has loaded. Below is a brief example of how to do this.
+At the moment, my best recommendation is to make the background of your `div` the image's dominant color, then in your JavaScript, change the background to your image once the page has loaded. Below is a brief example of how to do this.
 
 In your CSS:
 
