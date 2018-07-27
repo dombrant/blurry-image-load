@@ -10,6 +10,8 @@ If the user's browser doesn't support CSS filters, instead of applying the small
 
 ![shimmer effect example](img/shimmer-effect.gif)
 
+[Click here to see a live demo](https://dombrant.github.io/blurry-image-load/)
+
 ## Installation
 
 Download the `blurry-load.min.css` and `blurry-load.min.js` files (found in the `dist` folder) and include in your HTML:
