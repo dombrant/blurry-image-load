@@ -49,7 +49,7 @@ if (!supportsCSSFilters(true) && !supportsCSSFilters(false)) {
 If the browser doesn't support CSS filters,
 Display a gray background with a shimmer gradient (see the CSS class no-blur for details) */
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   for (let image of images) {
     const currentImage = new Image();
     currentImage.src = image.dataLarge;
