@@ -7,10 +7,10 @@ const supportsCSSFilters = enableWebkit => {
     enableWebkit = false;
   }
   //creating an element dynamically
-  const element = document.createElement('test');
+  const element = document.createElement("test");
   //adding filter-blur property to it
   element.style.cssText =
-    (enableWebkit ? '-webkit-' : '') + 'filter: blur(2px)';
+    (enableWebkit ? "-webkit-" : "") + "filter: blur(2px)";
   //checking whether the style is computed or ignored
   const test1 = element.style.length != 0;
   //checking for false positives of IE
@@ -25,10 +25,10 @@ const supportsCSSFilters = enableWebkit => {
 
 const images = [];
 
-for (let image of document.querySelectorAll('.blurry-load')) {
+for (let image of document.querySelectorAll(".blurry-load")) {
   const currentImage = {
     element: image,
-    dataLarge: image.getAttribute('data-large')
+    dataLarge: image.getAttribute("data-large")
   };
 
   images.push(currentImage);
@@ -40,25 +40,25 @@ if (!supportsCSSFilters(true) && !supportsCSSFilters(false)) {
   /* If the browser does not support CSS filters
   Checks with and without the -webkit- prefix */
   for (let image of images) {
-    image.element.src = '';
-    image.element.classList.add('no-blur');
-    image.element.classList.remove('blurry-load');
+    image.element.src = "";
+    image.element.classList.add("no-blur");
+    image.element.classList.remove("blurry-load");
   }
 }
 /* Fallback for browsers that don't support support CSS filters (mainly IE)
 If the browser doesn't support CSS filters,
 Display a gray background with a shimmer gradient (see the CSS class no-blur for details) */
 
-window.onload = () => {
+window.addEventListener("load", () => {
   for (let image of images) {
     const currentImage = new Image();
     currentImage.src = image.dataLarge;
 
     currentImage.onload = () => {
       image.element.src = currentImage.src;
-      image.element.classList.add('blur-out');
-      image.element.classList.remove('blurry-load');
+      image.element.classList.add("blur-out");
+      image.element.classList.remove("blurry-load");
     };
   }
-};
+});
 // The main function that loads each image once the page has loaded
