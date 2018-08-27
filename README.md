@@ -33,7 +33,7 @@ For each image that you want to apply the Blurry Load effect, add the class `blu
 <img class="blurry-load" src="img/image-3-small.jpg" data-large="img/image-3.jpg">
 ```
 
-**NOTE:** This library does not provide functionality for creating smaller versions of your images. That must be done on your own. For resizing images, I use Preview in macOS and change the width to 40 with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US). If you want to integrate resizing your images into your build workflow, you can use an image manipulation library like [sharp](https://github.com/lovell/sharp) or a Gulp plugin like [gulp-image-resize](https://github.com/scalableminds/gulp-image-resize).
+**NOTE:** This library does not provide functionality for creating smaller versions of your images. That must be done on your own. For resizing images, I use Preview in macOS and change the width to 50px with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US). If you want to integrate resizing your images into your build workflow, you can use an image manipulation library like [sharp](https://github.com/lovell/sharp) or a Gulp plugin like [gulp-image-resize](https://github.com/scalableminds/gulp-image-resize).
 
 ## "What about CSS background images?"
 
@@ -50,7 +50,7 @@ In your CSS:
 }
 
 .my-div-background-image {
-  background: url('img/background.jpg');
+  background: url("img/background.jpg");
 }
 ```
 
@@ -58,7 +58,7 @@ In your JavaScript:
 
 ```js
 window.onload = () => {
-  document.querySelector('.my-div').classList.add('my-div-background-image');
+  document.querySelector(".my-div").classList.add("my-div-background-image");
 };
 ```
 
