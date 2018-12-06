@@ -8,7 +8,7 @@ const rename = require("gulp-rename");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const stripDebug = require("gulp-strip-debug");
-const uglify = require("gulp-uglify-es").default;
+const terser = require("gulp-terser");
 const fs = require("fs");
 const prettyBytes = require("pretty-bytes");
 
@@ -66,7 +66,7 @@ const js = async () => {
       )
       .pipe(stripDebug())
       // .pipe(sourcemaps.init())
-      .pipe(uglify())
+      .pipe(terser())
       // .pipe(sourcemaps.write())
       .pipe(rename("blurry-load.min.js"))
       .pipe(gulp.dest("dist"))
