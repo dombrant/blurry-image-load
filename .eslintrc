@@ -1,21 +1,21 @@
 {
-    "extends": ["eslint:recommended"],
+  "extends": ["eslint:recommended"],
 
-    "env": {
-        "browser": true,
-        "node": true
-    },
+  "env": {
+    "browser": true,
+    "node": true
+  },
 
-    "globals": {
-        "supportsCSSFilters": true,
-        "Promise": true
-    },
+  "globals": {
+    "supportsCSSFilters": true,
+    "Promise": true
+  },
 
-    "parserOptions": {
-        "ecmaVersion": 2018
-    },
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
 
-    "rules": {
-        "no-console": 0
-    }
+  "rules": {
+    "no-console": 0
+  }
 }
