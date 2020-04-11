@@ -1,4 +1,4 @@
-# Blurry Image Load Version 2.0
+# Blurry Image Load
 
 ## Synopsis
 
@@ -29,19 +29,19 @@ For each image that you want to apply the Blurry Load effect, add the class `blu
 
 ```html
 <img
-    class="blurry-load"
-    src="img/image-1-small.jpg"
-    data-large="img/image-1.jpg"
+  class="blurry-load"
+  src="img/image-1-small.jpg"
+  data-large="img/image-1.jpg"
 />
 <img
-    class="blurry-load"
-    src="img/image-2-small.jpg"
-    data-large="img/image-2.jpg"
+  class="blurry-load"
+  src="img/image-2-small.jpg"
+  data-large="img/image-2.jpg"
 />
 <img
-    class="blurry-load"
-    src="img/image-3-small.jpg"
-    data-large="img/image-3.jpg"
+  class="blurry-load"
+  src="img/image-3-small.jpg"
+  data-large="img/image-3.jpg"
 />
 ```
 
@@ -57,12 +57,12 @@ In your CSS:
 
 ```css
 .my-div {
-    background: #319ecb;
-    /* The dominant color of the image below */
+  background: #319ecb;
+  /* The dominant color of the image below */
 }
 
 .my-div-background-image {
-    background: url("img/background.jpg");
+  background: url("img/background.jpg");
 }
 ```
 
@@ -70,7 +70,7 @@ In your JavaScript:
 
 ```js
 window.onload = () => {
-    document.querySelector(".my-div").classList.add("my-div-background-image");
+  document.querySelector(".my-div").classList.add("my-div-background-image");
 };
 ```
 
