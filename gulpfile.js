@@ -12,7 +12,7 @@ const terser = require("gulp-terser");
 const fs = require("fs");
 const prettyBytes = require("pretty-bytes");
 
-const plumberErrorHandler = error =>
+const plumberErrorHandler = (error) =>
   console.log(`${chalk.red("Error:")} ${error}`);
 // Create a function for handling errors caught by the plumber plugin
 
@@ -33,7 +33,7 @@ const css = async () => {
       .src("src/blurry-load.css")
       .pipe(
         plumber({
-          errorHandler: plumberErrorHandler
+          errorHandler: plumberErrorHandler,
         })
       )
       // .pipe(sourcemaps.init())
@@ -61,7 +61,7 @@ const js = async () => {
       .src("src/blurry-load.js")
       .pipe(
         plumber({
-          errorHandler: plumberErrorHandler
+          errorHandler: plumberErrorHandler,
         })
       )
       .pipe(stripDebug())

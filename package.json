@@ -1,24 +1,24 @@
 {
-    "name": "blurry-image-load",
-    "version": "2.0.0",
-    "description": "A library that loads images after the page has loaded, first showing a very small, blurred version of the image. Inspired by Medium's progressive image loading.",
-    "repository": "https://github.com/dombrant/blurry-image-load.git",
-    "author": "Dominic Brant <dombrant@gmail.com>",
-    "license": "MIT",
-    "homepage": "https://github.com/dombrant/blurry-image-load",
-    "devDependencies": {
-        "autoprefixer": "^8.6.2",
-        "chalk": "^2.4.1",
-        "cssnano": "^4.0.0",
-        "del": "^3.0.0",
-        "gulp": "^4.0.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-plumber": "^1.2.0",
-        "gulp-postcss": "^7.0.1",
-        "gulp-rename": "^1.3.0",
-        "gulp-sourcemaps": "^2.6.4",
-        "gulp-strip-debug": "^3.0.0",
-        "gulp-terser": "^1.1.6",
-        "pretty-bytes": "^5.1.0"
-    }
+  "name": "blurry-image-load",
+  "version": "2.0.0",
+  "description": "A library that loads images after the page has loaded, first showing a very small, blurred version of the image. Inspired by Medium's progressive image loading.",
+  "repository": "https://github.com/dombrant/blurry-image-load.git",
+  "author": "Dominic Brant <dombrant@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/dombrant/blurry-image-load",
+  "devDependencies": {
+    "autoprefixer": "^8.6.2",
+    "chalk": "^2.4.1",
+    "cssnano": "^4.0.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.3.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-strip-debug": "^3.0.0",
+    "gulp-terser": "^1.1.6",
+    "pretty-bytes": "^5.1.0"
+  }
 }

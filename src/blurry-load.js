@@ -1,6 +1,6 @@
 // Copied from https://stackoverflow.com/a/11047247
 
-const supportsCSSFilters = enableWebkit => {
+const supportsCSSFilters = (enableWebkit) => {
   //As I mentioned in my comments, the only render engine which truly supports
   //CSS3 filter is webkit. so here we fill webkit detection arg with its default
   if (enableWebkit === undefined) {
@@ -28,7 +28,7 @@ const images = [];
 for (let image of document.querySelectorAll(".blurry-load")) {
   const currentImage = {
     element: image,
-    dataLarge: image.getAttribute("data-large")
+    dataLarge: image.getAttribute("data-large"),
   };
 
   images.push(currentImage);
