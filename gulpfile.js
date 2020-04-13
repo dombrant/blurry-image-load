@@ -9,8 +9,12 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const stripDebug = require("gulp-strip-debug");
 const terser = require("gulp-terser");
+const replace = require("gulp-replace");
 const fs = require("fs");
 const prettyBytes = require("pretty-bytes");
+const version = require("./package.json").version;
+/* Get the package version
+Used below to insert into the top of blurry-image-load.js */
 
 const plumberErrorHandler = (error) =>
   console.log(`${chalk.red("Error:")} ${error}`);
@@ -68,6 +72,12 @@ const js = async () => {
       // .pipe(sourcemaps.init())
       .pipe(terser())
       // .pipe(sourcemaps.write())
+      .pipe(
+        replace(
+          `//@preserve Blurry Image Load`,
+          `// Blurry Image Load version ${version}`
+        )
+      )
       .pipe(rename("blurry-load.min.js"))
       .pipe(gulp.dest("dist"))
       .on("error", reject)

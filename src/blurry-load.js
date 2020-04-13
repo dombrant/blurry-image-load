@@ -1,5 +1,6 @@
-// Copied from https://stackoverflow.com/a/11047247
+//@preserve Blurry Image Load
 
+// Copied from https://stackoverflow.com/a/11047247
 const supportsCSSFilters = (enableWebkit) => {
   //As I mentioned in my comments, the only render engine which truly supports
   //CSS3 filter is webkit. so here we fill webkit detection arg with its default
