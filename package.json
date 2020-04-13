@@ -1,7 +1,7 @@
 {
   "name": "blurry-image-load",
   "version": "2.0.0",
-  "description": "A library that loads images after the page has loaded, first showing a very small, blurred version of the image. Inspired by Medium's progressive image loading.",
+  "description": "A progressive image loading library. Inspired by Medium’s similar technique.",
   "repository": "https://github.com/dombrant/blurry-image-load.git",
   "author": "Dominic Brant <dombrant@gmail.com>",
   "license": "MIT",
