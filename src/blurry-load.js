@@ -24,42 +24,52 @@ const supportsCSSFilters = (enableWebkit) => {
   return test1 && test2;
 };
 
-window.addEventListener("DOMContentLoaded", () => {
-  const images = [];
-
-  for (let image of document.querySelectorAll(".blurry-load")) {
-    const currentImage = {
-      element: image,
-      dataLarge: image.getAttribute("data-large"),
-    };
-
-    images.push(currentImage);
+class BlurryImageLoad {
+  constructor() {
+    this.images = this.createImagesArray();
   }
-  /* Make an array of objects containing each element in the DOM with the blurry-load class
-  and its data-large attribute value */
 
-  if (!supportsCSSFilters(true) && !supportsCSSFilters(false)) {
-    /* If the browser does not support CSS filters
-    Checks with and without the -webkit- prefix */
-    for (let image of images) {
-      image.element.src = "";
-      image.element.classList.add("no-blur");
-      image.element.classList.remove("blurry-load");
+  createImagesArray() {
+    const images = [];
+
+    for (let image of document.querySelectorAll(".blurry-load")) {
+      const currentImage = {
+        element: image,
+        dataLarge: image.getAttribute("data-large"),
+      };
+
+      images.push(currentImage);
     }
-  }
-  /* Fallback for browsers that don't support support CSS filters (mainly IE)
-  If the browser doesn't support CSS filters,
-  display a gray background with a shimmer gradient (see the CSS class no-blur for details) */
 
-  for (let image of images) {
-    const currentImage = new Image();
-    currentImage.src = image.dataLarge;
-
-    currentImage.onload = () => {
-      image.element.src = currentImage.src;
-      image.element.classList.add("blur-out");
-      image.element.classList.remove("blurry-load");
-    };
+    return images;
+    /* Make an array of objects containing each element in the DOM with the blurry-load class
+    and its data-large attribute value */
   }
-});
-// The main function that loads each image once the page has loaded
+
+  load(imagesToLoad = this.images) {
+    if (!supportsCSSFilters(true) && !supportsCSSFilters(false)) {
+      /* If the browser does not support CSS filters
+        Checks with and without the -webkit- prefix */
+      for (let image of imagesToLoad) {
+        image.element.src = "";
+        image.element.classList.add("no-blur");
+        image.element.classList.remove("blurry-load");
+      }
+    }
+    /* Fallback for browsers that don't support support CSS filters (mainly IE)
+      If the browser doesn't support CSS filters,
+      display a gray background with a shimmer gradient (see the CSS class no-blur for details) */
+
+    for (let image of imagesToLoad) {
+      const currentImage = new Image();
+      currentImage.src = image.dataLarge;
+
+      currentImage.onload = () => {
+        image.element.src = currentImage.src;
+        image.element.classList.add("blur-out");
+        image.element.classList.remove("blurry-load");
+      };
+    }
+    // The main function that loads each image once the page has loaded
+  }
+}

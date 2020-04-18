@@ -1,6 +1,6 @@
 {
   "name": "blurry-image-load",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A progressive image loading library. Inspired by Medium’s similar technique.",
   "repository": "https://github.com/dombrant/blurry-image-load.git",
   "author": "Dominic Brant <dombrant@gmail.com>",

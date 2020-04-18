@@ -1,6 +1,4 @@
 {
-  "extends": ["eslint:recommended"],
-
   "env": {
     "browser": true,
     "node": true
@@ -8,6 +6,8 @@
 
   "globals": {
     "supportsCSSFilters": true,
+    "BlurryImageLoad": true,
+    "imagesToLoad": true,
     "Promise": true
   },
 
