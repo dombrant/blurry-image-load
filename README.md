@@ -31,7 +31,7 @@ In your JavaScript, create an instance of the `BlurryImageLoad` class:
 const blurryImageLoad = new BlurryImageLoad();
 ```
 
-The class has one function, `load`. If you want to call the function once and have it load all of your images, add the class `blurry-load` to every `<img>` tag in your HTML. Then, the `<img>` tag must have two attributes: an `src` that is the path to the image resized to be smaller, and a `data-large` attribute that is the URL of the full-sized image. That implementation looks like this:
+The class has one function, `load`. If you want to call the function once and have it load all of your images, add the class `blurry-load` to every `<img>` tag in your HTML (this includes `img` tags inside of `picture` elements). Then, the `<img>` tag must have two attributes: an `src` that is the path to the image resized to be smaller, and a `data-large` attribute that is the URL of the full-sized image. That implementation looks like this:
 
 ```html
 <img

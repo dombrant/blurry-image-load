@@ -44,11 +44,31 @@
         </a>
       </div>
       <div class="images">
-        <img
-          class="blurry-load"
-          src="img/image-1-small.jpg"
-          data-large="img/image-1.jpg"
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              img/image-1/image-1-300w.webp   300w,
+              img/image-1/image-1-600w.webp   600w,
+              img/image-1/image-1-800w.webp   800w,
+              img/image-1/image-1-1000w.webp 1000w
+            "
+          />
+          <source
+            srcset="
+              img/image-1/image-1-300w.jpg   300w,
+              img/image-1/image-1-600w.jpg   600w,
+              img/image-1/image-1-800w.jpg   800w,
+              img/image-1/image-1-1000w.jpg 1000w
+            "
+          />
+          <img
+            class="blurry-load"
+            src="img/image-1/image-1-small.jpg"
+            data-large="img/image-1/image-1.jpg"
+          />
+        </picture>
+
         <img
           class="blurry-load"
           src="img/image-2-small.jpg"
