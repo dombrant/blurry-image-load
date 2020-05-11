@@ -35,11 +35,7 @@ const css = async () => {
   return new Promise((resolve, reject) => {
     gulp
       .src("src/blurry-load.css")
-      .pipe(
-        plumber({
-          errorHandler: plumberErrorHandler,
-        })
-      )
+      .pipe(plumber({ errorHandler: plumberErrorHandler }))
       // .pipe(sourcemaps.init())
       .pipe(rename("blurry-load.min.css"))
       .pipe(postcss(plugins))
@@ -63,11 +59,7 @@ const js = async () => {
   return new Promise((resolve, reject) => {
     gulp
       .src("src/blurry-load.js")
-      .pipe(
-        plumber({
-          errorHandler: plumberErrorHandler,
-        })
-      )
+      .pipe(plumber({ errorHandler: plumberErrorHandler }))
       .pipe(stripDebug())
       // .pipe(sourcemaps.init())
       .pipe(terser())
