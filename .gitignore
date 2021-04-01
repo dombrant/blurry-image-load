@@ -128,3 +128,6 @@ typings/
 .history
 
 # End of https://www.gitignore.io/api/macos,node,visualstudiocode
+# ignore node_modules symlink
+node_modules
+node_modules.nosync
