@@ -2,7 +2,7 @@
 
 ## Synopsis
 
-A simple library that loads images on demand. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style. Below is an example:
+A lightweight, zero-dependency library that loads images on demand. Until the images are loaded, a very small version of each image is displayed with a blur filter over it. Inspired by Medium's progressive image loading of a similar style. Below is an example:
 
 ![blur effect example](img/blur-effect.gif)
 
@@ -31,7 +31,7 @@ In your JavaScript, create an instance of the `BlurryImageLoad` class:
 const blurryImageLoad = new BlurryImageLoad();
 ```
 
-The class has one method, `load`. If you want to call it once and load all of your images, add the class `blurry-load` to every `<img>` tag in your HTML (this includes `img` tags inside of `picture` elements). Then, the `<img>` tag must have two attributes: an `src` that is the path to the image resized to be smaller, and a `data-large` attribute that is the URL of the full-sized image. That implementation looks like this:
+The class has one method, `load`. If you want to call it once and load all of your images, add the class `blurry-load` to every `<img>` tag in your HTML (this includes `img` tags inside of `picture` elements). Then, the `<img>` tag must have two attributes: an `src` attribute that is the path to the image resized to be smaller, and a `data-large` attribute that is the path to the full-sized image. That implementation looks like this:
 
 ```html
 <img
@@ -45,19 +45,17 @@ The class has one method, `load`. If you want to call it once and load all of yo
 blurryImageLoad.load();
 ```
 
-Alternatively, the `load` function can be called by passing an array of the element(s) you would like to load:
+Alternatively, the `load` function can be called by passing a comma-separated list or an array of the element(s) you would like to load:
 
 ```js
-blurryImageLoad.load([
+blurryImageLoad.load(
   document.querySelector(".img-1"),
   document.querySelector(".img-2"),
-  document.querySelector(".img-3"),
-]);
+  document.querySelector(".img-3")
+);
 ```
 
 One possible implemention would be to pair this with the IntersectionObserver API to load each image as it comes into the viewport.
-
-**NOTE:** The argument must be passed as an array, even if you are only passing one element.
 
 This library does NOT provide functionality for creating smaller versions of your images. That must be done on your own. For resizing images, I use Preview in macOS and change the width to 50px with the “Scale proportionally” option enabled. For help on how to use Preview to resize images, see [this article](https://support.apple.com/kb/PH5936?locale=en_US). If you want to integrate resizing your images into your build workflow, you can use an image manipulation library like [sharp](https://github.com/lovell/sharp) or a Gulp plugin like [gulp-image-resize](https://github.com/scalableminds/gulp-image-resize).
 
@@ -92,7 +90,7 @@ window.onload = () => {
 
 Tested to work in the latest version of Chrome, Firefox, Edge, and Safari. The only part of this library that has browser support that you should consider is ES2015 syntax (let/const, classes, etc.). If you want to support older browsers, you will have to transpile `blurry-load.min.js` yourself.
 
-Otherwise, this library uses [CSS filters](http://caniuse.com/#feat=css-filters), but this has a fallback in place. For browsers that don't support CSS filters, a blank gray `div` with a shimmer animation is shown before the full sized image is loaded (see the `no-blur` class in `blurry-load.css` for details).
+Otherwise, this library uses [CSS filters](http://caniuse.com/#feat=css-filters), but this has a fallback in place. For browsers that don't support CSS filters, a blank gray `div` with a shimmer animation is shown before the full sized image is loaded (see the `no-blur` class in `src/blurry-load.css` for details).
 
 ## Contributors
 

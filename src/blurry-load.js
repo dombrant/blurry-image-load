@@ -23,7 +23,15 @@ class BlurryImageLoad {
     return test1 && test2;
   }
 
-  load(images = document.querySelectorAll(".blurry-load")) {
+  load(...images) {
+    // Make all DOM elements with the class blurry-load the default value of the images parameter
+    if (images.length === 0) {
+      images = document.querySelectorAll(".blurry-load");
+    }
+
+    /* Fallback for browsers that don't support support CSS filters (mainly IE)
+      If the browser doesn't support CSS filters,
+      display a gray background with a shimmer gradient (see the CSS class no-blur for details) */
     if (!this.supportsCSSFilters(true) && !this.supportsCSSFilters(false)) {
       /* If the browser does not support CSS filters
         Checks with and without the -webkit- prefix */
@@ -33,20 +41,17 @@ class BlurryImageLoad {
         image.classList.remove("blurry-load");
       }
     }
-    /* Fallback for browsers that don't support support CSS filters (mainly IE)
-      If the browser doesn't support CSS filters,
-      display a gray background with a shimmer gradient (see the CSS class no-blur for details) */
 
     for (let image of images) {
       const currentImage = new Image();
       currentImage.src = image.getAttribute("data-large");
 
+      // The main function that loads each image once the page has loaded
       currentImage.onload = () => {
         image.src = currentImage.src;
         image.classList.add("blur-out");
         image.classList.remove("blurry-load");
       };
     }
-    // The main function that loads each image once the page has loaded
   }
 }
