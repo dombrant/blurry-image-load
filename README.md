@@ -96,7 +96,7 @@ Otherwise, this library uses [CSS filters](http://caniuse.com/#feat=css-filters)
 
 **Dominic Brant**.
 
-[Follow me on Twitter](https://twitter.com/dombrant), and feel free to let me know if you have any thoughts/suggestions/problems.
+If you have any thoughts/suggestions/problems, feel free to open an [issue](https://github.com/dombrant/blurry-image-load/issues).
 
 ## License
 
