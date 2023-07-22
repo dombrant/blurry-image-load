@@ -1,5 +1,3 @@
-//@preserve Blurry Image Load
-
 class BlurryImageLoad {
   supportsCSSFilters(enableWebkit) {
     // Copied from https://stackoverflow.com/a/11047247

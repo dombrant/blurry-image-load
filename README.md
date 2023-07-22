@@ -14,12 +14,7 @@ If the user's browser doesn't support CSS filters, a blank, gray shimmer is show
 
 ## Installation
 
-Download the `blurry-load.min.css` and `blurry-load.min.js` files (found in the `dist` folder) and include them in your HTML:
-
-```html
-<link rel="stylesheet" href="blurry-load.min.css" />
-<script src="blurry-load.min.js"></script>
-```
+Download the `blurry-load.css` and `blurry-load.js` files (found in the `src` folder) and include them in your project.
 
 **NOTE:** If you do not want to see a flash of the tiny, pixelated image in browsers that do not support CSS filters, link to the JavaScript file in the `head` tag of your HTML.
 
@@ -88,7 +83,7 @@ window.onload = () => {
 
 ## Browser Support
 
-Tested to work in the latest version of Chrome, Firefox, Edge, and Safari. The only part of this library that has browser support that you should consider is ES2015 syntax (let/const, classes, etc.). If you want to support older browsers, you will have to transpile `blurry-load.min.js` yourself.
+Tested to work in the latest version of Chrome, Firefox, Edge, and Safari. The only part of this library that has browser support that you should consider is ES2015 syntax (let/const, classes, etc.). If you want to support older browsers, you will have to transpile `blurry-load.js` yourself.
 
 Otherwise, this library uses [CSS filters](http://caniuse.com/#feat=css-filters), but this has a fallback in place. For browsers that don't support CSS filters, a blank gray `div` with a shimmer animation is shown before the full sized image is loaded (see the `no-blur` class in `src/blurry-load.css` for details).
 
